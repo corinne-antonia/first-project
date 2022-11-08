@@ -17,17 +17,44 @@ fn main() {
         } else {
             println!("fuck you");
         }
+
+    println!("Are you satisfied with your option?");
+
+    let satisfaction: String = get_input();
+
+    if satisfaction == "yes"{
+        println!("Have a nice day :)");
+    }
+        else if satisfaction == "no"{
+            println!("Do you want spicy or bland food?");
+        }
+        else {
+            println!("fuck you");
+        }
     } else if hungry == "no" {
-        println!("Drink water!!!!!");
+        println!("Ok :)");
     } else {
         println!("fuck you");
     }
+
+    println!("Are you thirsty?");
+
+    let thirst = get_input();
+        if thirst == "yes"{
+            println!("Scale of 1-10, how thirsty?");
+        }
+        else if thirst == "no"{
+            println! ("Ok :)");
+        }
+        else {
+            println!("fuck you")
+        }
 }
 
 fn get_input() -> String {
     let mut input = String::new();
     let my_stdin = stdin();
     my_stdin.read_line(&mut input).unwrap();
-    let input = input.trim();
+    let input = input.trim().to_lowercase();
     input.to_string()
 }
