@@ -6,8 +6,14 @@ fn main() {
     let hungry = get_input();
 
     if hungry == "yes" {
+        println!("On a sacle of 1-10, how hungry are you?");
+        let hungry_level = get_number();
+        if hungry_level >= 1 && hungry_level <= 3{
+            println!("You aren't really hungry");
+        }
+        else if hungry_level <3 {
         println!("Do you want salty or sweet food?");
-
+        }
         let sweet_salty = get_input();
 
         if sweet_salty == "salty" {
@@ -18,17 +24,15 @@ fn main() {
             println!("fuck you");
         }
 
-    println!("Are you satisfied with your option?");
+        println!("Are you satisfied with your option?");
 
-    let satisfaction: String = get_input();
+        let satisfaction: String = get_input();
 
-    if satisfaction == "yes"{
-        println!("Have a nice day :)");
-    }
-        else if satisfaction == "no"{
+        if satisfaction == "yes" {
+            println!("Have a nice day :)");
+        } else if satisfaction == "no" {
             println!("Do you want spicy or bland food?");
-        }
-        else {
+        } else {
             println!("fuck you");
         }
     } else if hungry == "no" {
@@ -40,17 +44,20 @@ fn main() {
     println!("Are you thirsty?");
 
     let thirst = get_input();
-        if thirst == "yes"{
-            println!("Scale of 1-10, how thirsty?");
-        }
-        else if thirst == "no"{
-            println! ("Ok :)");
-        }
-        else {
-            println!("fuck you")
-        }
+    if thirst == "yes" {
+        println!("Scale of 1-10, how thirsty?");
+        let thirst_level = get_number();
+            if thirst_level >= 1 && thirst_level <= 3{
+                println!("You don't need water")
+            }
+    } else if thirst == "no" {
+        println!("Ok :)");
+    } else {
+        println!("fuck you")
+    }
 }
 
+// get_input() is input from the terminal and my_stdin is my terminal input - NOTE my stdout is my terminal output
 fn get_input() -> String {
     let mut input = String::new();
     let my_stdin = stdin();
@@ -58,3 +65,9 @@ fn get_input() -> String {
     let input = input.trim().to_lowercase();
     input.to_string()
 }
+
+fn get_number() -> u32{
+    let number: u32 = get_input().parse().unwrap();
+    number // this is how I return the output
+}
+    
