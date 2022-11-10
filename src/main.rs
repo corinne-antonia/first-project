@@ -10,11 +10,12 @@ fn main() {
         let hungry_level = get_number();
         if hungry_level >= 1 && hungry_level <= 3 {
             println!("You aren't really hungry"); 
-            if hungry_level > 3 && hungry_level <= 5 {
-                println!("Have cheese and crackers for a snack");
-            } else if hungry_level > 5 && hungry_level <= 10 {
-                println!("Do you want salty or sweet food?");
-    
+        }
+        else if hungry_level > 3 && hungry_level <= 5 {
+            println!("Have cheese and crackers for a snack");
+        } 
+        else if hungry_level > 5 && hungry_level <= 10 {
+            println!("Do you want salty or sweet food?");
                 let sweet_salty = get_input();
                 if sweet_salty == "salty" {
                     println!("Make chinese food");
@@ -30,7 +31,7 @@ fn main() {
         let satisfaction: String = get_input();
 
         if satisfaction == "yes" {
-            println!("Have a nice day :)"); 
+            println!("Ok :)"); 
         } else if satisfaction == "no" {
             println!("Do you want spicy or bland food?");
             let option_2: String = get_input();
@@ -42,7 +43,7 @@ fn main() {
                 println!("fuck you");
             }
         }
-    } else if hungry == "no" {
+    else if hungry == "no" {
         println!("Ok :)");
     } else {
         println!("fuck you");
